@@ -28,23 +28,23 @@ local palette = {
   base      = "#1d1f21",
   mantle    = "#151718",
   crust     = "#0e0f10",
-	-- stylua: ignore end
+  -- stylua: ignore end
 }
 
 return {
-	name = "tomorrow-night",
-	colorscheme = "catppuccin",
+  name = "tomorrow-night",
+  colorscheme = "catppuccin",
 
-	apply = function(setup)
-		setup({
-			color_overrides = { mocha = palette },
-			integrations = { aerial = true, blink_cmp = true },
-		})
+  apply = function(setup)
+    setup({
+      color_overrides = { mocha = palette },
+      integrations = { aerial = true, blink_cmp = true },
+    })
 
-		vim.cmd.colorscheme("catppuccin")
-		vim.cmd.hi("FloatBorder guifg=" .. palette.surface2)
-		vim.cmd.hi("SnacksPicker guibg=" .. palette.base)
-		vim.cmd.hi(string.format("SnacksPickerBorder guifg=%s guibg=%s", palette.surface2, palette.base))
-		vim.cmd.hi("NormalAlt guibg=" .. palette.mantle)
-	end,
+    vim.cmd.colorscheme("catppuccin")
+    vim.cmd.hi("FloatBorder guifg=" .. palette.surface2)
+    vim.cmd.hi("SnacksPicker guibg=" .. palette.base)
+    vim.cmd.hi(string.format("SnacksPickerBorder guifg=%s guibg=%s", palette.surface2, palette.base))
+    vim.cmd.hi("NormalAlt guibg=" .. palette.mantle)
+  end,
 }
