@@ -16,16 +16,21 @@ local palette = {
   sapphire  = "#74c7e7",
   blue      = "#89b4fa",
   lavender  = "#b4befe",
+
   text      = "#cdd6f4",
   subtext1  = "#bac2de",
   subtext0  = "#a6adc8",
+
   overlay2  = "#9399b2",
   overlay1  = "#7f849c",
   overlay0  = "#6c7086",
+
   surface2  = "#585b70",
   surface1  = "#45475a",
   surface0  = "#313244",
+
   base      = "#1e1e2e",
+
   mantle    = "#181825",
   crust     = "#11111b",
   -- stylua: ignore end
