@@ -8,17 +8,17 @@ set -euo pipefail
 SCRIPT="${XDS_DATA_HOME:-$HOME/.local/share}/grimoire/tmux_statusline.sh"
 
 if [ -x "$SCRIPT" ]; then
-  export TMUX_COLOR_LEFT_FG=#1f1f28
+  export TMUX_COLOR_LEFT_FG=#1f1f26
   export TMUX_COLOR_LEFT_BG=colour2
 
   export TMUX_COLOR_MAIN_FG=colour15
-  export TMUX_COLOR_MAIN_BG=#33333d
+  export TMUX_COLOR_MAIN_BG=#33333b
 
   export TMUX_COLOR_ACTIVE_FG=colour15
-  export TMUX_COLOR_ACTIVE_BG=#1f1f28
+  export TMUX_COLOR_ACTIVE_BG=#1f1f26
 
   export TMUX_COLOR_SEG_1_FG=colour15
-  export TMUX_COLOR_SEG_1_BG=#33333d
+  export TMUX_COLOR_SEG_1_BG=#33333b
 
   export TMUX_COLOR_SEG_2_FG=colour7
   export TMUX_COLOR_SEG_2_BG=colour8

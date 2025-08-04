@@ -1,5 +1,4 @@
--- Based on Catppuccin Mocha (https://catppuccin.com/palette/)
--- and Tomorrow Night (https://github.com/chriskempson/tomorrow-theme)
+-- Based on Tomorrow Night (https://github.com/chriskempson/tomorrow-theme)
 
 local palette = {
   -- stylua: ignore start
@@ -18,22 +17,22 @@ local palette = {
   blue      = "#81acd9",
   lavender  = "#b3a7db",
 
-  text      = "#ced6ee",
-  subtext1  = "#bcc3d7",
-  subtext0  = "#a8aec1",
+  text      = "#ced6ec",
+  subtext1  = "#bcc3d5",
+  subtext0  = "#a8aebf",
 
-  overlay2  = "#969baa",
-  overlay1  = "#838793",
-  overlay0  = "#70727d",
+  overlay2  = "#969ba8",
+  overlay1  = "#838791",
+  overlay0  = "#70727b",
 
-  surface2  = "#5b5d68",
-  surface1  = "#474953",
-  surface0  = "#33333d",
+  surface2  = "#5b5d66",
+  surface1  = "#474951",
+  surface0  = "#33333b",
 
-  base      = "#1f1f28",
+  base      = "#1f1f26",
 
-  mantle    = "#19191f",
-  crust     = "#121215",
+  mantle    = "#19191d",
+  crust     = "#121213",
   -- stylua: ignore end
 }
 

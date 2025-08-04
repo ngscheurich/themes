@@ -1,5 +1,4 @@
--- Based on Catppuccin Latte (https://catppuccin.com/palette/)
--- and Tomorrow Night (https://github.com/chriskempson/tomorrow-theme)
+-- Based on Tomorrow (https://github.com/chriskempson/tomorrow-theme)
 
 local palette = {
   -- stylua: ignore start
