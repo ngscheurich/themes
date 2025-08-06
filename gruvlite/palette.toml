@@ -1,0 +1,33 @@
+# Based on Gruvbox (https://github.com/morhetz/gruvbox)
+
+rosewater = "#b16286"
+flamingo  = "#79740e"
+pink      = "#b16286"
+mauve     = "#b16286"
+red       = "#9d0006"
+maroon    = "#d65d0e"
+peach     = "#af3a03"
+yellow    = "#b57614"
+green     = "#79740e"
+teal      = "#689d6a"
+sky       = "#427b58"
+sapphire  = "#458588"
+blue      = "#076678"
+lavender  = "#427b58"
+
+text      = "#3c3836"
+subtext1  = "#3c3826"
+subtext0  = "#282828"
+
+overlay2  = "#976464"
+overlay1  = "#755f5f"
+overlay0  = "#7d7d7d"
+
+surface2  = "#bcaeae"
+surface1  = "#cfcfc0"
+surface0  = "#e8e0cf"
+
+base      = "#f0ebd2"
+
+mantle    = "#e8e0c6"
+crust     = "#c4bfb2"

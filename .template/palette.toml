@@ -1,0 +1,33 @@
+# Based on Tomorrow Night (https://github.com/chriskempson/tomorrow-theme)
+
+rosewater = "#ab7e8a" # Macros, Cursor
+flamingo  = "#c49f91" # Atoms, symbols
+pink      = "#c094c2" # Escape Sequences, Regex
+mauve     = "#bd6d8f" # Keywords
+red       = "#d46269" # Builtins, Errors
+maroon    = "#d57d62" # Parameters
+peach     = "#de9974" # Constants, Numbers, Warnings
+yellow    = "#f0c674" # Classes, Types, Enums, Attributes
+green     = "#b5bd82" # Strings
+teal      = "#9fbd8f" # Enum Variants, Information, Search BG
+sky       = "#87c1b9" # Operators
+sapphire  = "#7ea8a7" # Unknown
+blue      = "#81acd9" # Methods, Functions, Property
+lavender  = "#b3a7db" # Active Line Number
+
+text      = "#ced6ec" # Foreground, Cursor Line @ 10%
+subtext1  = "#bcc3d5"
+subtext0  = "#a8aebf"
+
+overlay2  = "#969ba8" # Comments
+overlay1  = "#838791" # Line Numbers
+overlay0  = "#70727b"
+
+surface2  = "#5b5d66"
+surface1  = "#474951"
+surface0  = "#33333b"
+
+base      = "#1f1f26" # Background
+
+mantle    = "#19191d"
+crust     = "#121213"
