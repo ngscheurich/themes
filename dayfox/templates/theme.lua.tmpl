@@ -40,6 +40,10 @@ local groups = {
 return {
   colorscheme = "dayfox",
 
+  statusline = {
+    bg_alt = palette.bg3,
+  },
+
   apply = function(setup)
     setup({
       palettes = { all = palette },
