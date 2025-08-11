@@ -9,19 +9,19 @@ if [ -x "$SCRIPT" ]; then
   export TMUX_COLOR_LEFT_BG=colour2
 
   export TMUX_COLOR_MAIN_FG=colour15
-  export TMUX_COLOR_MAIN_BG={{ .palette.surface0 }}
+  export TMUX_COLOR_MAIN_BG={{ .palette.bg0 }}
 
   export TMUX_COLOR_ACTIVE_FG=colour15
-  export TMUX_COLOR_ACTIVE_BG={{ .palette.base }}
+  export TMUX_COLOR_ACTIVE_BG={{ .palette.bg1 }}
 
   export TMUX_COLOR_SEG_1_FG=colour15
-  export TMUX_COLOR_SEG_1_BG={{ .palette.surface0 }}
+  export TMUX_COLOR_SEG_1_BG={{ .palette.bg2 }}
 
   export TMUX_COLOR_SEG_2_FG=colour15
-  export TMUX_COLOR_SEG_2_BG={{ .palette.surface0 }}
+  export TMUX_COLOR_SEG_2_BG={{ .palette.bg2 }}
 
-  export TMUX_COLOR_SEG_3_FG={{ .palette.subtext1 }}
-  export TMUX_COLOR_SEG_3_BG={{ .palette.surface2 }}
+  export TMUX_COLOR_SEG_3_FG=colour15
+  export TMUX_COLOR_SEG_3_BG={{ .palette.bg3 }}
 
   "$SCRIPT"
 else

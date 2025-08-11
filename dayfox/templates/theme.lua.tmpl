@@ -30,6 +30,7 @@ local palette = {
 local specs = {}
 
 local groups = {
+  CursorLine = { bg = "{{ .palette.white }}" },
   NormalAlt = { bg = "bg0" },
   FloatBorder = { fg = "bg4" },
   SnacksPicker = { bg = "bg1" },
@@ -37,7 +38,7 @@ local groups = {
 }
 
 return {
-  colorscheme = "nightfox", -- or "dayfox" for light themes
+  colorscheme = "dayfox",
 
   apply = function(setup)
     setup({
