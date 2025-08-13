@@ -5,7 +5,7 @@ set -euo pipefail
 SCRIPT="${XDS_DATA_HOME:-$HOME/.local/share}/grimoire/tmux_statusline.sh"
 
 if [ -x "$SCRIPT" ]; then
-  export TMUX_COLOR_LEFT_FG=colour0
+  export TMUX_COLOR_LEFT_FG={{ .palette.bg0 }}
   export TMUX_COLOR_LEFT_BG=colour2
 
   export TMUX_COLOR_MAIN_FG=colour15
