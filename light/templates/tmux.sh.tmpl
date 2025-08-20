@@ -24,6 +24,8 @@ if [ -x "$SCRIPT" ]; then
   export TMUX_COLOR_SEG_3_FG={{ .palette.base04 }}
   export TMUX_COLOR_SEG_3_BG={{ .palette.base02 }}
 
+  tmux set -g message-style bg=black,fg=white
+
   "$SCRIPT"
 else
   echo "📖 No viable script in sight... ($SCRIPT)"
