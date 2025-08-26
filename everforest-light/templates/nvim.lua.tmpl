@@ -17,6 +17,18 @@ local palette = {
   base0F = "{{ .palette.base0F }}",
 }
 
+local function darken(hex_color, amount)
+  local r, g, b = hex_color:match("#(%x%x)(%x%x)(%x%x)")
+  r, g, b = tonumber(r, 16), tonumber(g, 16), tonumber(b, 16)
+
+  local factor = 1.0 - amount
+  r = math.floor(r * factor)
+  g = math.floor(g * factor)
+  b = math.floor(b * factor)
+
+  return string.format("#%02x%02x%02x", r, g, b)
+end
+
 local function higlight(name, opts)
   local defaults = { fg = palette.base05, bg = palette.base00 }
   local colors = vim.tbl_extend("force", defaults, opts)
@@ -32,7 +44,7 @@ return {
     setup({ palette = p, plugins = { default = false } })
 
     higlight("StatusLine", { bg = p.base01 })
-    higlight("CursorLine", { fg = "none", bg = "#202020" })
+    higlight("CursorLine", { fg = "none", bg = darken(p.base00, 0.02) })
     higlight("LineNr", { fg = p.base03, bg = p.base00 })
     higlight("SignColumn", { fg = p.base03, bg = p.base00 })
     higlight("SnacksPicker", { bg = p.base00 })
@@ -43,6 +55,7 @@ return {
     higlight("GitSignsAddLn", { fg = p.base0B, bg = p.base00 })
     higlight("GitSignsChange", { fg = p.base0D })
     higlight("GitSignsDelete", { fg = p.base08 })
+    higlight("WinSeparator", { fg = p.base02, bg = nil })
   end,
 }
 
