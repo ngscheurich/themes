@@ -1,0 +1,40 @@
+# Based on Neovim default theme (https://github.com/neovim/neovim)
+
+# bg0: Alternate background (status line, float)
+# bg1: Default background
+# bg2: Alternate background (colorcolumn, folds)
+# bg3: Alternate background (cursorline)
+# bg4: Conceal, border foreground
+# fg0: Alternate foreground
+# fg1: Default foreground
+# fg2: Alternate foreground (status line)
+# fg3: Alternate foreground (line numbers, fold columns)
+# sel0: Popup background, visual selection background
+# sel1: Popup selection background, search background
+
+black   = "#9b9ea4"
+red     = "#ffc0b9"
+green   = "#b3f6c0"
+yellow  = "#fce094"
+blue    = "#a6dbff"
+magenta = "#ffcaff"
+cyan    = "#8cf8f7"
+white   = "#eef1f8"
+orange  = "#fce094"
+pink    = "#ffcaff"
+
+bg0     = "#07080d"
+bg1     = "#14161b"
+bg2     = "#2c2e33"
+bg3     = "#4f5258"
+bg4     = "#4f5258"
+
+fg0     = "#eef1f8"
+fg1     = "#e0e2ea"
+fg2     = "#c4c6cd"
+fg3     = "#9b9ea4"
+
+comment = "#9b9ea4"
+
+sel0    = "#2c2e33"
+sel1    = "#e0e2ea"

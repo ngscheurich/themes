@@ -1,0 +1,85 @@
+local palette = {
+  black = "{{ .palette.black }}",
+  red = "{{ .palette.red }}",
+  green = "{{ .palette.green }}",
+  yellow = "{{ .palette.yellow }}",
+  blue = "{{ .palette.blue }}",
+  magenta = "{{ .palette.magenta }}",
+  cyan = "{{ .palette.cyan }}",
+  white = "{{ .palette.white }}",
+  orange = "{{ .palette.orange }}",
+  pink = "{{ .palette.pink }}",
+
+  bg0 = "{{ .palette.bg0 }}",
+  bg1 = "{{ .palette.bg1 }}",
+  bg2 = "{{ .palette.bg2 }}",
+  bg3 = "{{ .palette.bg3 }}",
+  bg4 = "{{ .palette.bg4 }}",
+
+  fg0 = "{{ .palette.fg0 }}",
+  fg1 = "{{ .palette.fg1 }}",
+  fg2 = "{{ .palette.fg2 }}",
+  fg3 = "{{ .palette.fg3 }}",
+
+  comment = "{{ .palette.comment }}",
+
+  sel0 = "{{ .palette.sel0 }}",
+  sel1 = "{{ .palette.sel1 }}",
+}
+
+local normal_dark = require("ngs.util").shade("{{ .palette.bg1 }}", -0.05)
+
+local groups = {
+  CursorLine = { bg = normal_dark },
+  PmenuSel = { fg = palette.bg1 },
+  StatusLine = { bg = palette.bg0 },
+  SnacksPicker = { bg = palette.bg1 },
+  SnacksPickerBorder = { fg = palette.bg4, bg = palette.bg1 },
+  SnacksPickerDir = { fg = palette.comment },
+  Visual = { fg = palette.bg1, bg = palette.yellow },
+}
+
+return {
+  apply = function(setup)
+    setup({
+      palettes = { all = palette },
+      groups = { all = groups },
+    })
+
+    vim.cmd.colorscheme("nightfox")
+  end,
+  statusline = {
+    fg = palette.bg1,
+    fg_alt = palette.bg1,
+    bg = palette.fg1,
+    bg_alt = palette.fg1,
+
+    mode_name_fg = palette.bg1,
+    mode_icon_fg = palette.bg1,
+    mode_normal = palette.fg1,
+    mode_visual = palette.fg1,
+    mode_select = palette.fg1,
+    mode_insert = palette.fg1,
+    mode_replace = palette.fg1,
+    mode_command = palette.fg1,
+    mode_ex = palette.fg1,
+    mode_wait = palette.fg1,
+    mode_terminal = palette.fg1,
+
+    readonly = palette.bg1,
+
+    vcs_branch = palette.bg1,
+    vcs_added = palette.bg1,
+    vcs_removed = palette.bg1,
+    vcs_changed = palette.bg1,
+
+    diag_error = palette.bg1,
+    diag_warning = palette.bg1,
+    diag_info = palette.bg1,
+    diag_hint = palette.bg1,
+
+    lsp = palette.bg1,
+  },
+}
+
+-- vim:ft=lua
