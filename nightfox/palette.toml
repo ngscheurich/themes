@@ -1,0 +1,40 @@
+# Based on Nightfox (https://github.com/EdenEast/nightfox.nvim)
+
+# bg0: Alternate background (status line, float)
+# bg1: Default background
+# bg2: Alternate background (colorcolumn, folds)
+# bg3: Alternate background (cursorline)
+# bg4: Conceal, border foreground
+# fg0: Alternate foreground
+# fg1: Default foreground
+# fg2: Alternate foreground (status line)
+# fg3: Alternate foreground (line numbers, fold columns)
+# sel0: Popup background, visual selection background
+# sel1: Popup selection background, search background
+
+black   = "#393b44"
+red     = "#c94f6d"
+green   = "#81b29a"
+yellow  = "#dbc074"
+blue    = "#719cd6"
+magenta = "#9d79d6"
+cyan    = "#63cdcf"
+white   = "#dfdfe0"
+orange  = "#f4a261"
+pink    = "#d67ad2"
+
+bg0     = "#131a24"
+bg1     = "#192330"
+bg2     = "#212e3f"
+bg3     = "#29394f"
+bg4     = "#39506d"
+
+fg0     = "#d6d6d7"
+fg1     = "#cdcecf"
+fg2     = "#aeafb0"
+fg3     = "#71839b"
+
+comment = "#738091"
+
+sel0    = "#2b3b51"
+sel1    = "#3c5372"
