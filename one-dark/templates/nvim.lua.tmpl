@@ -26,17 +26,19 @@ local palette = {
   sel0 = "{{ .palette.sel0 }}",
   sel1 = "{{ .palette.sel1 }}",
 }
+
+local alt_bg = require("ngs.util").shade("{{ .palette.bg1 }}", -0.1)
 local selection = require("ngs.util").shade("{{ .palette.blue }}", -0.7)
 
 local groups = {
-  Cursor = { bg = palette.blue },
   CursorLine = { bg = "#2f343e" },
   PmenuSel = { fg = palette.fg1 },
   StatusLine = { bg = palette.bg0 },
-  SnacksPicker = { bg = palette.bg1 },
-  SnacksPickerBorder = { fg = palette.bg4, bg = palette.bg1 },
+  SnacksPicker = { bg = alt_bg },
+  SnacksPickerBorder = { fg = palette.bg3, bg = alt_bg },
   SnacksPickerDir = { fg = palette.comment },
   Visual = { fg = "none", bg = selection },
+  WhichKeyFloat = { bg = alt_bg },
 }
 
 return {
@@ -48,6 +50,8 @@ return {
 
     vim.cmd.colorscheme("nightfox")
   end,
+
+  statusline = {},
 }
 
 -- vim:ft=lua
