@@ -27,13 +27,13 @@ local palette = {
   sel1 = "{{ .palette.sel1 }}",
 }
 
-local alt_bg = require("ngs.util").shade("{{ .palette.bg1 }}", -0.1)
+local alt_bg = require("ngs.util").shade("{{ .palette.bg1 }}", -0.2)
 local selection = require("ngs.util").shade("{{ .palette.blue }}", -0.7)
 
 local groups = {
-  CursorLine = { bg = require("ngs.util").shade("{{ .palette.bg1 }}", 0.025) },
+  CursorLine = { bg = "#1a1a1b" },
   PmenuSel = { fg = palette.fg1 },
-  StatusLine = { bg = palette.bg2 },
+  StatusLine = { bg = palette.bg0 },
   SnacksPicker = { bg = alt_bg },
   SnacksPickerBorder = { fg = palette.bg3, bg = alt_bg },
   SnacksPickerDir = { fg = palette.comment },

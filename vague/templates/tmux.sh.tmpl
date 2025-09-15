@@ -6,9 +6,6 @@ set -euo pipefail
 SCRIPT="${XDG_DATA_HOME:-$HOME/.local/share}/grimoire/tmux_statusline.sh"
 
 if [ -x "$SCRIPT" ]; then
-  tmux set-option -g message-style fg={{ .palette.bg1 }},bg=colour11
-  tmux set-option -g status-style fg={{ .palette.bg1 }},bg=colour11
-
   export TMUX_COLOR_LEFT_FG={{ .palette.bg1 }}
   export TMUX_COLOR_LEFT_BG={{ .palette.green }}
 
