@@ -31,12 +31,14 @@ local alt_bg = require("ngs.util").shade("{{ .palette.bg1 }}", -0.1)
 local selection = require("ngs.util").shade("{{ .palette.blue }}", -0.7)
 
 local groups = {
+  BlinkCmpMenuBorder = { fg = palette.fg3 },
   CursorLine = { bg = require("ngs.util").shade("{{ .palette.bg1 }}", 0.025) },
+  LspSignatureActiveParameter = { fg = palette.yellow },
   PmenuSel = { fg = palette.fg1 },
-  StatusLine = { bg = palette.bg2 },
   SnacksPicker = { bg = alt_bg },
   SnacksPickerBorder = { fg = palette.bg3, bg = alt_bg },
   SnacksPickerDir = { fg = palette.comment },
+  StatusLine = { bg = palette.bg2 },
   Visual = { fg = "none", bg = selection },
   WhichKeyNormal = { bg = alt_bg },
 }

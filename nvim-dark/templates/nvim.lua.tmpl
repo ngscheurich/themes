@@ -27,16 +27,17 @@ local palette = {
   sel1 = "{{ .palette.sel1 }}",
 }
 
-local normal_dark = require("ngs.util").shade("{{ .palette.bg1 }}", -0.05)
+local alt_bg = require("ngs.util").shade("{{ .palette.bg1 }}", 0.025)
 
 local groups = {
-  CursorLine = { bg = normal_dark },
+  CursorLine = { bg = alt_bg },
   PmenuSel = { fg = palette.bg1 },
   StatusLine = { bg = palette.bg0 },
-  SnacksPicker = { bg = palette.bg1 },
-  SnacksPickerBorder = { fg = palette.bg4, bg = palette.bg1 },
+  SnacksPicker = { bg = alt_bg },
+  SnacksPickerBorder = { fg = palette.bg4, bg = alt_bg },
   SnacksPickerDir = { fg = palette.comment },
   Visual = { fg = palette.bg1, bg = palette.yellow },
+  WhichKeyNormal = { bg = alt_bg },
 }
 
 return {
@@ -54,8 +55,9 @@ return {
     bg = palette.fg1,
     bg_alt = palette.fg1,
 
-    mode_name_fg = palette.bg1,
     mode_icon_fg = palette.bg1,
+    mode_icon_bg = palette.fg1,
+    mode_name_fg = palette.bg1,
     mode_normal = palette.fg1,
     mode_visual = palette.fg1,
     mode_select = palette.fg1,
@@ -79,6 +81,8 @@ return {
     diag_hint = palette.bg1,
 
     lsp = palette.bg1,
+
+    ft_icon = palette.bg1,
   },
 }
 

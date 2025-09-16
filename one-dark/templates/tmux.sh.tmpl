@@ -6,9 +6,6 @@ set -euo pipefail
 SCRIPT="${XDG_DATA_HOME:-$HOME/.local/share}/grimoire/tmux_statusline.sh"
 
 if [ -x "$SCRIPT" ]; then
-  tmux set-option -g message-style fg={{ .palette.bg1 }},bg=colour11
-  tmux set-option -g status-style fg={{ .palette.bg1 }},bg=colour11
-
   export TMUX_COLOR_LEFT_FG={{ .palette.bg1 }}
   export TMUX_COLOR_LEFT_BG={{ .palette.green }}
 
@@ -28,6 +25,10 @@ if [ -x "$SCRIPT" ]; then
   export TMUX_COLOR_SEG_3_BG={{ .palette.bg2 }}
 
   "$SCRIPT"
+
+  tmux set-option -g message-style fg={{ .palette.black }},bg=colour11
+  tmux set-option -g message-command-style fg={{ .palette.black }},bg=colour2
+  tmux set-option -g mode-style fg={{ .palette.black }},bg=colour11
 else
   echo "📖 No viable script in sight... ($SCRIPT)"
   exit 1

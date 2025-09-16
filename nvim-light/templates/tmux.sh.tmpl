@@ -10,21 +10,24 @@ if [ -x "$SCRIPT" ]; then
   export TMUX_COLOR_LEFT_BG={{ .palette.green }}
 
   export TMUX_COLOR_MAIN_FG={{ .palette.bg1 }}
-  export TMUX_COLOR_MAIN_BG={{ .palette.fg1 }}
+  export TMUX_COLOR_MAIN_BG={{ .palette.green }}
 
-  export TMUX_COLOR_ACTIVE_FG={{ .palette.fg1 }}
-  export TMUX_COLOR_ACTIVE_BG={{ .palette.bg1 }}
+  export TMUX_COLOR_ACTIVE_FG={{ .palette.bg0 }}
+  export TMUX_COLOR_ACTIVE_BG={{ .palette.green }}
 
   export TMUX_COLOR_SEG_1_FG={{ .palette.bg2 }}
-  export TMUX_COLOR_SEG_1_BG={{ .palette.fg1 }}
+  export TMUX_COLOR_SEG_1_BG={{ .palette.green }}
 
   export TMUX_COLOR_SEG_2_FG={{ .palette.bg2 }}
-  export TMUX_COLOR_SEG_2_BG={{ .palette.fg1 }}
+  export TMUX_COLOR_SEG_2_BG={{ .palette.green }}
 
-  export TMUX_COLOR_SEG_3_FG={{ .palette.fg1 }}
-  export TMUX_COLOR_SEG_3_BG={{ .palette.bg2 }}
+  export TMUX_COLOR_SEG_3_FG={{ .palette.bg1 }}
+  export TMUX_COLOR_SEG_3_BG={{ .palette.green }}
 
   "$SCRIPT"
+
+  tmux set-option -g message-style fg={{ .palette.bg1 }},bg=colour11
+  tmux set -g window-status-current-format "#[fg=$TMUX_COLOR_ACTIVE_FG,bg=$TMUX_COLOR_ACTIVE_BG] #I #[fg=$TMUX_COLOR_SEG_2_BG]│ #[fg=$TMUX_COLOR_ACTIVE_FG]#W* "
 else
   echo "📖 No viable script in sight... ($SCRIPT)"
   exit 1
