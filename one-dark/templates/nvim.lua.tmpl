@@ -1,12 +1,12 @@
 local palette = {
   black = "{{ .palette.black }}",
-  red = "{{ .palette.red }}",
+  red = "{{ .palette.blue }}",
   green = "{{ .palette.green }}",
   yellow = "{{ .palette.yellow }}",
-  blue = "{{ .palette.blue }}",
+  blue = "{{ .palette.red }}",
   magenta = "{{ .palette.magenta }}",
   cyan = "{{ .palette.cyan }}",
-  white = "{{ .palette.white }}",
+  white = "{{ .palette.fg1 }}",
   orange = "{{ .palette.orange }}",
   pink = "{{ .palette.pink }}",
 
@@ -53,7 +53,29 @@ return {
     vim.cmd.colorscheme("nightfox")
   end,
 
-  statusline = {},
+  statusline = {
+    fg = palette.fg1,
+    fg_alt = palette.fg1,
+    bg = palette.bg2,
+    bg_alt = palette.bg3,
+
+    -- mode_icon_fg = palette.fg1,
+    -- mode_icon_bg = palette.bg3,
+    -- mode_name_fg = palette.fg2,
+    mode_normal = palette.fg3,
+    -- mode_visual = palette.bg3,
+    -- mode_select = palette.bg3,
+    -- mode_insert = palette.bg3,
+    -- mode_replace = palette.bg3,
+    -- mode_command = palette.bg3,
+    -- mode_ex = palette.bg3,
+    -- mode_wait = palette.bg3,
+    -- mode_terminal = palette.bg3,
+
+    vcs_branch = palette.pink,
+
+    lsp = palette.fg2,
+  },
 }
 
 -- vim:ft=lua
