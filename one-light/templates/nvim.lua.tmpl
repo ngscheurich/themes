@@ -1,9 +1,9 @@
 local palette = {
   black = "{{ .palette.black }}",
-  red = "{{ .palette.red }}",
+  red = "{{ .palette.blue }}",
   green = "{{ .palette.green }}",
   yellow = "{{ .palette.yellow }}",
-  blue = "{{ .palette.blue }}",
+  blue = "{{ .palette.red }}",
   magenta = "{{ .palette.magenta }}",
   cyan = "{{ .palette.cyan }}",
   white = "{{ .palette.white }}",
@@ -27,18 +27,19 @@ local palette = {
   sel1 = "{{ .palette.sel1 }}",
 }
 
-local normal_dark = require("ngs.util").shade("{{ .palette.bg1 }}", -0.03)
+local alt_bg = require("ngs.util").shade("{{ .palette.bg1 }}", -0.03)
 local selection = require("ngs.util").shade("{{ .palette.blue }}", 0.85)
 
 local groups = {
   Cursor = { bg = palette.blue },
-  CursorLine = { bg = normal_dark },
+  CursorLine = { bg = alt_bg },
   PmenuSel = { fg = palette.fg1 },
   StatusLine = { bg = palette.bg0 },
-  SnacksPicker = { bg = palette.bg1 },
-  SnacksPickerBorder = { fg = palette.bg4, bg = palette.bg1 },
+  SnacksPicker = { bg = alt_bg },
+  SnacksPickerBorder = { fg = palette.bg3, bg = alt_bg },
   SnacksPickerDir = { fg = palette.comment },
   Visual = { fg = "none", bg = selection },
+  WhichKeyNormal = { bg = alt_bg },
 }
 
 return {
@@ -50,6 +51,30 @@ return {
 
     vim.cmd.colorscheme("dayfox")
   end,
+
+  statusline = {
+    -- fg = palette.fg1,
+    -- fg_alt = palette.fg1,
+    -- bg = palette.bg2,
+    -- bg_alt = palette.bg3,
+
+    -- mode_icon_fg = palette.fg2,
+    -- mode_icon_bg = palette.bg3,
+    -- mode_name_fg = palette.fg2,
+    mode_normal = palette.fg3,
+    -- mode_visual = palette.bg3,
+    -- mode_select = palette.bg3,
+    -- mode_insert = palette.bg3,
+    -- mode_replace = palette.bg3,
+    -- mode_command = palette.bg3,
+    -- mode_ex = palette.bg3,
+    -- mode_wait = palette.bg3,
+    -- mode_terminal = palette.bg3,
+
+    -- vcs_branch = palette.pink,
+
+    lsp = palette.fg2,
+  },
 }
 
 -- vim:ft=lua
