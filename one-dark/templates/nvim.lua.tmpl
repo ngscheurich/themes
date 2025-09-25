@@ -31,6 +31,8 @@ local alt_bg = require("ngs.util").shade("{{ .palette.bg1 }}", -0.1)
 local selection = require("ngs.util").shade("{{ .palette.blue }}", -0.7)
 
 local groups = {
+  DiagnosticError = { fg = palette.blue },
+  DiagnosticUnderlineError = { fg = "none", sp = palette.blue },
   BlinkCmpMenuBorder = { fg = palette.fg3 },
   CursorLine = { bg = require("ngs.util").shade("{{ .palette.bg1 }}", 0.025) },
   LspSignatureActiveParameter = { fg = palette.yellow },
