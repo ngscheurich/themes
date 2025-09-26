@@ -1,0 +1,41 @@
+# Based on Zed's One Dark implementation
+# https://github.com/zed-industries/zed/tree/main/assets/themes/one
+
+# bg0: Alternate background (status line, float)
+# bg1: Default background
+# bg2: Alternate background (colorcolumn, folds)
+# bg3: Alternate background (cursorline)
+# bg4: Conceal, border foreground
+# fg0: Alternate foreground
+# fg1: Default foreground
+# fg2: Alternate foreground (status line)
+# fg3: Alternate foreground (line numbers, fold columns)
+# sel0: Popup background, visual selection background
+# sel1: Popup selection background, search background
+
+black   = "#282c33"
+red     = "#ff6262"
+green   = "#c8ffa7"
+yellow  = "#fdffab"
+blue    = "#9ce7ff"
+magenta = "#ffddfa"
+cyan    = "#9ce7ff"
+white   = "#fefefc"
+orange  = "#fdffab"
+pink    = "#ffddfa"
+
+bg0     = "#1c1c1c"
+bg1     = "#2f2f2f"
+bg2     = "#444444"
+bg3     = "#595959"
+bg4     = "#6d6d6d"
+
+fg0     = "#fbfaff"
+fg1     = "#f0eeff"
+fg2     = "#d8d6e6"
+fg3     = "#c0becc"
+
+comment = "#d4d4d4"
+
+sel0    = "#353535"
+sel1    = "#4b4b4b"
