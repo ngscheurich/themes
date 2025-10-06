@@ -17,25 +17,30 @@ local palette = {
   base0F = "{{ .palette.base0F }}",
 }
 
-local cursor = "#80ABE3"
 local cursor_line = "#2E323A"
 local panel = "#2F343E"
 local selection = "#3A4A5E"
 local indent = "#404246"
 local indent_scope = "#4E5054"
 local separator = "#474b56"
-local git = { add = "#52A45F", change = "#CDB143", delete = "#D17278" }
+local git = {
+  added = "{{ .palette.vcs_added }}",
+  modified = "{{ .palette.vcs_modified }}",
+  deleted = "{{ .palette.vcs_deleted }}",
+}
 
 return {
   apply = function(setup)
     setup({ palette = palette })
 
     local groups = {
-      Cursor = { fg = cursor, bg = palette.base00 },
+      PmenuSel = { fg = palette.base05, bg = palette.base02 },
+      Cursor = { fg = palette.base0D, bg = palette.base00 },
       CursorLine = { bg = cursor_line },
-      GitSignsAdd = { fg = git.add },
-      GitSignsChange = { fg = git.change },
-      GitSignsDelete = { fg = git.delete },
+      Delimiter = { fg = palette.base04 },
+      GitSignsAdd = { fg = git.added },
+      GitSignsChange = { fg = git.modified },
+      GitSignsDelete = { fg = git.deleted },
       LineNr = { fg = palette.base03, bg = "NONE" },
       LspSignatureActiveParameter = { fg = palette.base0F },
       SignColumn = { bg = "NONE" },
