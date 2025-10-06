@@ -17,36 +17,23 @@ local palette = {
   base0F = "{{ .palette.base0F }}",
 }
 
-local cursor = "#80ABE3"
-local cursor_line = "#2E323A"
-local panel = "#2F343E"
-local selection = "#3A4A5E"
-local indent = "#404246"
-local indent_scope = "#4E5054"
-local separator = "#474b56"
-local git = { add = "#52A45F", change = "#CDB143", delete = "#D17278" }
-
 return {
   apply = function(setup)
+    local colors = require("lib.colors")
+
     setup({ palette = palette })
 
+    local alt_bgs = colors.new(palette.base00):shades(4)
+    vim.print({ alts = alt_bgs })
+    -- local selection = require("ngs.util").shade("{{ .palette.blue }}", -0.7)
+
     local groups = {
-      Cursor = { fg = cursor, bg = palette.base00 },
-      CursorLine = { bg = cursor_line },
-      GitSignsAdd = { fg = git.add },
-      GitSignsChange = { fg = git.change },
-      GitSignsDelete = { fg = git.delete },
-      LineNr = { fg = palette.base03, bg = "NONE" },
-      LspSignatureActiveParameter = { fg = palette.base0F },
       SignColumn = { bg = "NONE" },
-      SnacksIndent = { fg = indent },
-      SnacksIndentScope = { fg = indent_scope },
-      SnacksPicker = { bg = panel },
-      SnacksPickerBorder = { fg = palette.base03, bg = panel },
-      SnacksPickerDir = { fg = palette.base04 },
-      Visual = { fg = "NONE", bg = selection },
-      WhichKeyNormal = { bg = panel },
-      WinSeparator = { fg = separator, bg = "NONE" },
+      LineNr = { fg = palette.base03, bg = "NONE" },
+      CursorLine = { bg = colors.new(palette.base00):lighten_to(0.15):to_rgb() },
+      -- SnacksPicker = { bg = alt_bg },
+      -- SnacksPickerBorder = { fg = palette.bg3, bg = alt_bg },
+      -- SnacksPickerDir = { fg = palette.comment },
     }
 
     for name, opts in pairs(groups) do
@@ -57,8 +44,6 @@ return {
       vim.cmd.highlight(highlight)
     end
   end,
-
-  statusline = {},
 }
 
 -- vim:ft=lua
