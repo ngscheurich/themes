@@ -1,0 +1,17 @@
+set fzf_color "
+fg:7,
+bg:{{ .palette.base01 }},
+hl:8,
+fg+:3,
+bg+:{{ .palette.base01 }},
+hl+:1,
+gutter:{{ .palette.base01 }},
+info:6,
+prompt:2,
+pointer:4,
+marker:1,
+spinner:5
+"
+set -gx FZF_DEFAULT_OPTS "--color $(echo $fzf_color | string join '')"
+
+# vim:ft=fish

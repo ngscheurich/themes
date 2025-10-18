@@ -1,0 +1,40 @@
+# Inspired by Zed's One Dark implementation
+# https://github.com/zed-industries/zed/tree/main/assets/themes/one
+
+# base00 - Default Background
+# base01 - Lighter Background (Used for status bars, line number and folding marks)
+# base02 - Selection Background
+# base03 - Comments, Invisibles, Line Highlighting
+# base04 - Dark Foreground (Used for status bars)
+# base05 - Default Foreground, Caret, Delimiters, Operators
+# base06 - Light Foreground (Not often used)
+# base07 - Light Background (Not often used)
+# base08 - Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
+# base09 - Integers, Boolean, Constants, XML Attributes, Markup Link Url
+# base0A - Classes, Markup Bold, Search Text Background
+# base0B - Strings, Inherited Class, Markup Code, Diff Inserted
+# base0C - Support, Regular Expressions, Escape Characters, Markup Quotes
+# base0D - Functions, Methods, Attribute IDs, Headings
+# base0E - Keywords, Storage, Selector, Markup Italic, Diff Changed
+# base0F - Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
+
+base00 = "#282c33"
+base01 = "#363c46"
+base02 = "#464b57"
+base03 = "#5d636f"
+base04 = "#878a98"
+base05 = "#acb2be"
+base06 = "#d0d4da"
+base07 = "#fafafa"
+base08 = "#d07277"
+base09 = "#bf956a"
+base0A = "#dfc184"
+base0B = "#a1c181"
+base0C = "#6eb4bf"
+base0D = "#73ade9"
+base0E = "#b477cf"
+base0F = "#b1574b"
+
+vcs_added = "#27a657"
+vcs_modified = "#d3b020"
+vcs_deleted = "#e06c76"
