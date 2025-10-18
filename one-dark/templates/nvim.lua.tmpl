@@ -34,9 +34,11 @@ return {
     setup({ palette = palette })
 
     local groups = {
-      PmenuSel = { fg = palette.base05, bg = palette.base02 },
+      Pmenu = { bg = panel },
+      PmenuSel = { fg = palette.base05, bg = selection },
       Cursor = { fg = palette.base0D, bg = palette.base00 },
       CursorLine = { bg = cursor_line },
+      CursorLineNr = { bg = cursor_line },
       Delimiter = { fg = palette.base04 },
       GitSignsAdd = { fg = git.added },
       GitSignsChange = { fg = git.modified },
@@ -51,6 +53,7 @@ return {
       SnacksPickerDir = { fg = palette.base04 },
       Visual = { fg = "NONE", bg = selection },
       WhichKeyNormal = { bg = panel },
+      WhichKeySeparator = { fg = palette.base04, bg = panel },
       WinSeparator = { fg = separator, bg = "NONE" },
     }
 
