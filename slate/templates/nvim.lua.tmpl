@@ -51,10 +51,14 @@ return {
       SnacksPicker = { bg = panel },
       SnacksPickerBorder = { fg = palette.base03, bg = panel },
       SnacksPickerDir = { fg = palette.base04 },
+      Structure = { fg = palette.base0C },
+      Tag = { fg = palette.base04, style = "bold" },
       Visual = { fg = "NONE", bg = selection },
       WhichKeyNormal = { bg = panel },
       WhichKeySeparator = { fg = palette.base04, bg = panel },
       WinSeparator = { fg = separator, bg = "NONE" },
+      ["@string.heex"] = { fg = palette.base0A },
+      ["@tag.attribute.heex"] = { fg = palette.base09 },
     }
 
     for name, opts in pairs(groups) do

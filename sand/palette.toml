@@ -1,5 +1,5 @@
-# Based on Base16 Default Dark
-# https://github.com/chriskempson/base16-default-schemes
+# Inspired by Zed's One Light implementation
+# https://github.com/zed-industries/zed/tree/main/assets/themes/one
 
 # base00 - Default Background
 # base01 - Lighter Background (Used for status bars, line number and folding marks)
@@ -18,19 +18,23 @@
 # base0E - Keywords, Storage, Selector, Markup Italic, Diff Changed
 # base0F - Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
 
-base00 = "#181818"
-base01 = "#282828"
-base02 = "#383838"
-base03 = "#585858"
-base04 = "#b8b8b8"
-base05 = "#d8d8d8"
-base06 = "#e8e8e8"
-base07 = "#f8f8f8"
-base08 = "#ab4642"
-base09 = "#dc9656"
-base0A = "#f7ca88"
-base0B = "#a1b56c"
-base0C = "#86c1b9"
-base0D = "#7cafc2"
-base0E = "#ba8baf"
-base0F = "#a16946"
+base00 = "#f3f2f2"
+base01 = "#e6e0e0"
+base02 = "#d8cfcf"
+base03 = "#958d8d"
+base04 = "#6f6868"
+base05 = "#4c4949"
+base06 = "#363636"
+base07 = "#d8cfcf"
+base08 = "#ae4737"
+base09 = "#9d611d"
+base0A = "#bd8700"
+base0B = "#5c9052"
+base0C = "#2e75a8"
+base0D = "#30629e"
+base0E = "#7b3c80"
+base0F = "#b15c50"
+
+vcs_added = "#27a657"
+vcs_modified = "#d3b020"
+vcs_deleted = "#e06c76"

@@ -1,55 +1,72 @@
 local palette = {
-  black = "{{ .palette.black }}",
-  red = "{{ .palette.red }}",
-  green = "{{ .palette.green }}",
-  yellow = "{{ .palette.yellow }}",
-  blue = "{{ .palette.blue }}",
-  magenta = "{{ .palette.magenta }}",
-  cyan = "{{ .palette.cyan }}",
-  white = "{{ .palette.white }}",
-  orange = "{{ .palette.orange }}",
-  pink = "{{ .palette.pink }}",
-
-  bg0 = "{{ .palette.bg0 }}",
-  bg1 = "{{ .palette.bg1 }}",
-  bg2 = "{{ .palette.bg2 }}",
-  bg3 = "{{ .palette.bg3 }}",
-  bg4 = "{{ .palette.bg4 }}",
-
-  fg0 = "{{ .palette.fg0 }}",
-  fg1 = "{{ .palette.fg1 }}",
-  fg2 = "{{ .palette.fg2 }}",
-  fg3 = "{{ .palette.fg3 }}",
-
-  comment = "{{ .palette.comment }}",
-
-  sel0 = "{{ .palette.sel0 }}",
-  sel1 = "{{ .palette.sel1 }}",
+  base00 = "{{ .palette.base00 }}",
+  base01 = "{{ .palette.base01 }}",
+  base02 = "{{ .palette.base02 }}",
+  base03 = "{{ .palette.base03 }}",
+  base04 = "{{ .palette.base04 }}",
+  base05 = "{{ .palette.base05 }}",
+  base06 = "{{ .palette.base06 }}",
+  base07 = "{{ .palette.base07 }}",
+  base08 = "{{ .palette.base08 }}",
+  base09 = "{{ .palette.base09 }}",
+  base0A = "{{ .palette.base0A }}",
+  base0B = "{{ .palette.base0B }}",
+  base0C = "{{ .palette.base0C }}",
+  base0D = "{{ .palette.base0D }}",
+  base0E = "{{ .palette.base0E }}",
+  base0F = "{{ .palette.base0F }}",
 }
 
-local normal_dark = require("ngs.util").shade("{{ .palette.bg1 }}", -0.03)
-local selection = require("ngs.util").shade("{{ .palette.blue }}", 0.85)
-
-local groups = {
-  Cursor = { bg = palette.blue },
-  CursorLine = { bg = normal_dark },
-  PmenuSel = { fg = palette.fg1 },
-  StatusLine = { bg = palette.bg0 },
-  SnacksPicker = { bg = palette.bg1 },
-  SnacksPickerBorder = { fg = palette.bg4, bg = palette.bg1 },
-  SnacksPickerDir = { fg = palette.comment },
-  Visual = { fg = "none", bg = selection },
+local cursor_line = "#efeff0"
+local panel = "#ebebec"
+local selection = "#d4dbf4"
+local indent = "#d7d5d3"
+local indent_scope = "#d6d5d2"
+local separator = "#cacaca"
+local git = {
+  added = "{{ .palette.vcs_added }}",
+  modified = "{{ .palette.vcs_modified }}",
+  deleted = "{{ .palette.vcs_deleted }}",
 }
 
 return {
   apply = function(setup)
-    setup({
-      palettes = { all = palette },
-      groups = { all = groups },
-    })
+    setup({ palette = palette })
 
-    vim.cmd.colorscheme("dayfox")
+    local groups = {
+      Pmenu = { bg = panel },
+      PmenuSel = { fg = palette.base05, bg = selection },
+      Cursor = { fg = palette.base0D, bg = palette.base00 },
+      CursorLine = { bg = cursor_line },
+      CursorLineNr = { bg = cursor_line },
+      Delimiter = { fg = palette.base04 },
+      GitSignsAdd = { fg = git.added },
+      GitSignsChange = { fg = git.modified },
+      GitSignsDelete = { fg = git.deleted },
+      LineNr = { fg = palette.base03, bg = "NONE" },
+      LspSignatureActiveParameter = { fg = palette.base09 },
+      SignColumn = { bg = "NONE" },
+      SnacksIndent = { fg = indent },
+      SnacksIndentScope = { fg = indent_scope },
+      SnacksPicker = { bg = panel },
+      SnacksPickerBorder = { fg = palette.base03, bg = panel },
+      SnacksPickerDir = { fg = palette.base04 },
+      Visual = { fg = "NONE", bg = selection },
+      WhichKeyNormal = { bg = panel },
+      WhichKeySeparator = { fg = palette.base04, bg = panel },
+      WinSeparator = { fg = separator, bg = "NONE" },
+    }
+
+    for name, opts in pairs(groups) do
+      local fg = opts.fg or "NONE"
+      local bg = opts.bg or "NONE"
+      local style = opts.style or "NONE"
+      local highlight = string.format("%s guifg=%s guibg=%s gui=%s", name, fg, bg, style)
+      vim.cmd.highlight(highlight)
+    end
   end,
+
+  statusline = {},
 }
 
 -- vim:ft=lua

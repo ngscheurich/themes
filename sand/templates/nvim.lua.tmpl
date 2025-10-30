@@ -17,12 +17,12 @@ local palette = {
   base0F = "{{ .palette.base0F }}",
 }
 
-local cursor_line = "#2E323A"
-local panel = "#2F343E"
-local selection = "#3A4A5E"
-local indent = "#404246"
-local indent_scope = "#4E5054"
-local separator = "#474b56"
+local cursor_line = "#eeeded"
+local panel = "#eae6e6"
+local selection = "#e5eaee"
+local indent = "#e6e1e1"
+local indent_scope = "#dad3d3"
+local separator = "#cecaca"
 local git = {
   added = "{{ .palette.vcs_added }}",
   modified = "{{ .palette.vcs_modified }}",
@@ -51,10 +51,14 @@ return {
       SnacksPicker = { bg = panel },
       SnacksPickerBorder = { fg = palette.base03, bg = panel },
       SnacksPickerDir = { fg = palette.base04 },
+      Structure = { fg = palette.base0C },
+      Tag = { fg = palette.base04, style = "bold" },
       Visual = { fg = "NONE", bg = selection },
       WhichKeyNormal = { bg = panel },
       WhichKeySeparator = { fg = palette.base04, bg = panel },
       WinSeparator = { fg = separator, bg = "NONE" },
+      ["@string.heex"] = { fg = palette.base0A },
+      ["@tag.attribute.heex"] = { fg = palette.base09 },
     }
 
     for name, opts in pairs(groups) do
