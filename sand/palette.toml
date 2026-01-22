@@ -35,6 +35,8 @@ base0D = "#30629e"
 base0E = "#7b3c80"
 base0F = "#b15c50"
 
+term_bg = "#f1eeee"
+
 vcs_added = "#27a657"
 vcs_modified = "#d3b020"
 vcs_deleted = "#e06c76"
