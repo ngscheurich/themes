@@ -1,0 +1,89 @@
+local palette = {
+  base00 = "{{ .palette.base00 }}",
+  base01 = "{{ .palette.base01 }}",
+  base02 = "{{ .palette.base02 }}",
+  base03 = "{{ .palette.base03 }}",
+  base04 = "{{ .palette.base04 }}",
+  base05 = "{{ .palette.base05 }}",
+  base06 = "{{ .palette.base06 }}",
+  base07 = "{{ .palette.base07 }}",
+  base08 = "{{ .palette.base08 }}",
+  base09 = "{{ .palette.base09 }}",
+  base0A = "{{ .palette.base0A }}",
+  base0B = "{{ .palette.base0B }}",
+  base0C = "{{ .palette.base0C }}",
+  base0D = "{{ .palette.base0D }}",
+  base0E = "{{ .palette.base0E }}",
+  base0F = "{{ .palette.base0F }}",
+}
+
+local cursor_line = "#2E323A"
+local panel = "#2F343E"
+local selection = "#3A4A5E"
+local indent = "#404246"
+local indent_scope = "#4E5054"
+local separator = "#474b56"
+local git = {
+  added = "{{ .palette.vcs_added }}",
+  modified = "{{ .palette.vcs_modified }}",
+  deleted = "{{ .palette.vcs_deleted }}",
+}
+
+return {
+  setup = function()
+    local base16_ok, base16 = pcall(require, "mini.base16")
+
+    if base16_ok then
+      base16.setup({ palette = palette })
+
+      local groups = {
+        Pmenu = { bg = panel },
+        PmenuSel = { fg = palette.base05, bg = selection },
+        Cursor = { fg = palette.base0D, bg = palette.base00 },
+        CursorLine = { bg = cursor_line },
+        CursorLineNr = { bg = cursor_line },
+        Delimiter = { fg = palette.base04 },
+        DiagnosticFloatingError = { fg = palette.base08 },
+        DiagnosticFloatingHint = { fg = palette.base0D },
+        DiagnosticFloatingInfo = { fg = palette.base0C },
+        DiagnosticFloatingOk = { fg = palette.base0B },
+        DiagnosticFloatingWarn = { fg = palette.base0A },
+        GitSignsAdd = { fg = git.added },
+        GitSignsChange = { fg = git.modified },
+        GitSignsDelete = { fg = git.deleted },
+        LineNr = { fg = palette.base03, bg = "NONE" },
+        LspSignatureActiveParameter = { fg = palette.base0F },
+        SignColumn = { bg = "NONE" },
+        SnacksIndent = { fg = indent },
+        SnacksIndentScope = { fg = indent_scope },
+        SnacksPicker = { bg = panel },
+        SnacksPickerBorder = { fg = palette.base03, bg = panel },
+        SnacksPickerDir = { fg = palette.base04 },
+        Structure = { fg = palette.base0C },
+        Tag = { fg = palette.base04, style = "bold" },
+        Visual = { fg = "NONE", bg = selection },
+        WhichKeyNormal = { bg = panel },
+        WhichKeySeparator = { fg = palette.base04, bg = panel },
+        WinSeparator = { fg = separator, bg = "NONE" },
+        ["@string.heex"] = { fg = palette.base0A },
+        ["@tag.attribute.heex"] = { fg = palette.base09 },
+      }
+
+      for name, opts in pairs(groups) do
+        local fg = opts.fg or "NONE"
+        local bg = opts.bg or "NONE"
+        local style = opts.style or "NONE"
+        local highlight = string.format("%s guifg=%s guibg=%s gui=%s", name, fg, bg, style)
+        vim.cmd.highlight(highlight)
+      end
+    else
+      vim.notify("mini.base16 is required", vim.diagnostic.severity.ERROR)
+    end
+  end,
+
+  statusline = {
+    lsp = palette.base04,
+  },
+}
+
+-- vim:ft=lua
